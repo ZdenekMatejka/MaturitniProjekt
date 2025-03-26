@@ -1,0 +1,150 @@
+Co je Pygame? 
+
+Pygame je herní framework a wrapper nad SDL(2),
+který umožňuje vyvíjet hry ve vašem oblíbeném programovacím jazyce.
+Poskytuje sadu tříd a funkcí, pomocí kterých je možné na obrazovku snadno
+vykreslovat rastry, přehrávat zvuky, zachytávat vstupy a podobně.
+
+Jelikož se ale jedná pouze o wrapper nad SDL(2), nenabízí Pygame
+žádné pokročilé konstrukce a tak celá logika hry závisí pouze na
+vývojáři. Výhodou tohoto přístupu je, že coby vývojáři máme velkou
+volnost v tom, jak si svoji hru logicky uspořádáme. Zároveň je díky SDL
+například možné přeložit hry napsané v Pygame i na Android, což si
+ukážeme v některé z pozdějších lekcí.
+
+
+Proč používat Pygame? 
+
+Pro Python existuje nepřeberné množství
+různých frameworků na tvoření klikátek a grafických aplikací. Ty
+nejrozšířenější z nich, ať již se jedná o vestavěný Tkinter,
+popř. různé verze pro Qt,
+mají společné, že jsou velice pomalé, pokud se jejich vizuální podoba
+rychle mění. Z toho důvodu při vývoji her, kdy je co možná nejrychlejší
+změna obrazu jednou z klíčových vlastností, sáhneme raději po Pygame,
+který je vytvořen v duchu tohoto konceptu. Další výhodou Pygame je, že je
+schopný použít hardwarovou akceleraci, je-li to možné.
+Zdroj: https://www.itnetwork.cz/python/pygame/pygame-uvod--instalace
+
+
+T3Chat
+
+Pygame je multiplatformní sada modulů Pythonu určená k vývoji videoher. Je navržena tak, 
+aby byla snadno použitelná pro začátečníky, ale zároveň dostatečně výkonná pro profesionální vývojáře. 
+Níže najdete co nejvíce informací o pygame:
+
+Základní informace:
+Jazyk: Python
+Licence: LGPL (umožňuje komerční i nekomerční použití)
+Platformy: Windows, Linux, macOS, Android, iOS (přes Pygame Subset for Android a Pygame for iOS)
+Web: https://www.pygame.org/
+
+Klíčové vlastnosti a moduly:
+pygame.Surface: Základní objekt pro reprezentaci obrázků. Lze jej považovat za plátno, na které se kreslí.
+pygame.Rect: Obdélníkový objekt, který se používá pro pozici a rozměry objektů.
+pygame.Color: Reprezentace barev (RGB, RGBA, HSL, apod.).
+pygame.font: Pro práci s fonty a vykreslování textu.
+pygame.image: Pro načítání a ukládání obrázků (JPG, PNG, GIF, BMP, TGA, TIFF atd.).
+pygame.mixer: Pro práci se zvukem (načítání, přehrávání, ovládání hlasitosti, atd.). Podporuje formáty WAV, MP3, OGG.
+pygame.time: Pro řízení času ve hře (např. snímkovací frekvence).
+pygame.event: Pro zpracování uživatelských vstupů (klávesnice, myš, joystick, dotyková obrazovka).
+pygame.sprite: Pro správu a vykreslování herních objektů (spritů). Umožňuje efektivní detekci kolizí.
+pygame.draw: Pro kreslení základních geometrických tvarů (obdélníky, kruhy, čáry, polygony).
+pygame.transform: Pro transformace obrázků (změna velikosti, rotace, zrcadlení).
+pygame.math: Obsahuje vektorové a maticové operace pro pokročilé výpočty.
+pygame.joystick: Pro podporu joysticků a gamepadů.
+pygame.mouse: Pro interakci s myší.
+pygame.key: Pro interakci s klávesnicí.
+pygame.display: Pro správu okna (vytvoření, aktualizace, nastavení titulu, ikonky, atd.).
+
+
+Instalace:
+Pomocí pip:
+bash
+pip install pygame
+Základní struktura pygame hry:
+
+Import modulu pygame:
+python
+import pygame
+
+Inicializace pygame:
+python
+pygame.init()
+
+Nastavení okna:
+python
+sirka = 800
+vyska = 600
+okno = pygame.display.set_mode((sirka, vyska))
+pygame.display.set_caption("Moje hra")
+Herní smyčka (game loop):
+
+python
+hotovo = False
+while not hotovo:
+    # Zpracování událostí
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            hotovo = True
+
+    # Logika hry (aktualizace pozic, detekce kolizí, atd.)
+
+    # Vykreslování
+    okno.fill((0, 0, 0))  # Vyplní okno černou barvou
+    # Kreslení herních objektů...
+    pygame.display.flip()  # Aktualizuje okno
+
+pygame.quit()
+
+Ukončení pygame:
+python
+pygame.quit()
+
+Příklady použití:
+Vykreslení obdélníku:
+python
+pygame.draw.rect(okno, (255, 0, 0), (50, 50, 100, 50)) # okno, barva, (x, y, sirka, vyska)
+
+Načtení a vykreslení obrázku:
+python
+obrazek = pygame.image.load("obrazek.png")
+okno.blit(obrazek, (100, 100))  # okno, (x, y)
+
+Přehrávání zvuku:
+python
+pygame.mixer.init()
+zvuk = pygame.mixer.Sound("zvuk.wav")
+zvuk.play()
+
+Zpracování klávesnice:
+python
+keys = pygame.key.get_pressed()
+if keys[pygame.K_SPACE]:
+    print("Mezerník stisknut!")
+
+Výhody pygame:
+Jednoduchost a snadná učitelnost: Pygame je navržen tak, aby byl pro začátečníky snadno pochopitelný.
+Multiplatformnost: Hry vytvořené v pygame lze spouštět na různých operačních systémech.
+Rozsáhlá komunita a dokumentace: K dispozici je mnoho tutoriálů, příkladů a aktivní komunita.
+Zdarma a open-source: Pygame je zdarma k použití a úpravám.
+Rychlý vývoj prototypů: Pygame umožňuje rychle vytvářet prototypy her a testovat herní mechanismy.
+
+Nevýhody pygame:
+Nižší výkon než nativní jazyky (C++, C#): Python je interpretovaný jazyk, takže hry vytvořené v pygame mohou 
+být pomalejší než hry vytvořené v kompilovaných jazycích. To nemusí být problém pro menší hry, 
+ale u složitějších her může být potřeba optimalizace.
+Omezené možnosti pro 3D grafiku: Pygame je primárně určen pro 2D hry. Pro 3D grafiku existují lepší alternativy 
+(např. Unity, Unreal Engine).
+Správa paměti: Python má automatickou správu paměti (garbage collection), což může občas vést k zasekávání hry.
+
+Alternativy k pygame:
+PyOpenGL: Pro 3D grafiku v Pythonu.
+Pyglet: Alternativní knihovna pro vývoj her v Pythonu s důrazem na OpenGL.
+Kivy: Framework pro vytváření multi-touch aplikací, včetně her, s podporou mobilních platforem.
+Godot Engine (s GDScript): Komplexní herní engine s vlastním skriptovacím jazykem (podobný Pythonu).
+Unity (s C#): Populární herní engine pro 2D a 3D hry.
+Unreal Engine (s C++ nebo Blueprints): Výkonný herní engine pro náročné hry.
+
+Pygame je skvělá volba pro začátečníky, kteří se chtějí naučit vyvíjet hry v Pythonu. Je jednoduchý, 
+multiplatformní a má rozsáhlou komunitu. S trochou úsilí můžete vytvořit zábavné a zajímavé hry.
