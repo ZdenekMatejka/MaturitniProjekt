@@ -1,9 +1,0 @@
-<script>start("/Users/zdenekmatejka/Documents/School/Střední průmyslová škola Kladno, Jana Palacha 1840/MZ 2025/MatPRO/Maturitní projekt - Hra/img/");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("background.png","background.png",0,91253,"89.1 kB",1738680226,"04.02.25 15:43:46");</script>
-<script>addRow("Bomb-icon.png","Bomb-icon.png",0,7459,"7.3 kB",1740244317,"22.02.25 18:11:57");</script>
-<script>addRow("Coin-icon.png","Coin-icon.png",0,2700,"2.6 kB",1730467858,"01.11.24 14:30:58");</script>
-<script>addRow("Luigi-icon.png","Luigi-icon.png",0,22724,"22.2 kB",1738238041,"30.01.25 12:54:01");</script>
-<script>addRow("LuigiI-icon.png","LuigiI-icon.png",0,47138,"46.0 kB",1738677455,"04.02.25 14:57:35");</script>
-<script>addRow("Mario-icon.png","Mario-icon.png",0,6404,"6.3 kB",1730467838,"01.11.24 14:30:38");</script>
-<script>addRow("MarioI-icon.png","MarioI-icon.png",0,46132,"45.1 kB",1738677517,"04.02.25 14:58:37");</script>
