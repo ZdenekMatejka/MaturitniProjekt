@@ -1,6 +1,0 @@
-<script>start("/Users/zdenekmatejka/Documents/School/Střední průmyslová škola Kladno, Jana Palacha 1840/MZ 2025/MatPRO/Maturitní projekt - Hra/media/");</script>
-<script>onHasParentDirectory();</script>
-<script>addRow("bomb.wav","bomb.wav",0,6108,"6.0 kB",1739812939,"17.02.25 18:22:19");</script>
-<script>addRow("GroundTheme.mp3","GroundTheme.mp3",0,3395451,"3.2 MB",1730633676,"03.11.24 12:34:36");</script>
-<script>addRow("loss.wav","loss.wav",0,28709,"28.0 kB",1730618888,"03.11.24 8:28:08");</script>
-<script>addRow("pick.wav","pick.wav",0,2547,"2.5 kB",1730618914,"03.11.24 8:28:34");</script>
